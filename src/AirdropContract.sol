@@ -55,7 +55,7 @@ contract AirdropContract is Pausable, Ownable, ReentrancyGuard {
         uint256 _interactionThreshold, 
         uint256 _startTime,
         uint256 _endTime
-    ) Ownable(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266) {
+    ) Ownable(msg.sender) {
         rewardToken = (IERC20(_rewardToken));
         interactionContract = _interactionContract;
         interactionThreshold = _interactionThreshold;
